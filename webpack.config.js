@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    mode: 'development',
     entry: path.resolve(__dirname, 'src', 'index.jsx'), // Arquivo padrão/entrada
     output: { // Identificando que arquivo vai ser retornado
         path: path.resolve(__dirname, 'dist'),
