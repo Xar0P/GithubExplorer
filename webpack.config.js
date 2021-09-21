@@ -13,6 +13,9 @@ module.exports = {
             '.js', '.jsx'
         ]
     },
+    devServer: {
+        static: path.resolve(__dirname, 'public'), // Mostrando onde está o conteudo estatico da aplicação
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'public', 'index.html')
