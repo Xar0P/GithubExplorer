@@ -7,14 +7,14 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = {
     mode: isDevelopment ? 'development' : 'production',
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
-    entry: path.resolve(__dirname, 'src', 'index.jsx'), // Arquivo padrão/entrada
+    entry: path.resolve(__dirname, 'src', 'index.tsx'), // Arquivo padrão/entrada
     output: { // Identificando que arquivo vai ser retornado
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     resolve: { // Que arquivos ele vai transformar
         extensions: [
-            '.js', '.jsx'
+            '.js', '.jsx', '.ts', '.tsx' 
         ]
     },
     devServer: {
@@ -30,7 +30,7 @@ module.exports = {
     module: { // Como a aplicação vai se comportar com os arquivos
         rules: [
             {
-                test: /\.js?x$/,
+                test: /\.(j|t)s?x$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
